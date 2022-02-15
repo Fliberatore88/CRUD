@@ -34,8 +34,10 @@ const controller = {
 	store: (req, res) => {
 		
 		const newProduct =  req.body;
+		const ultimoElementoDeArray = products[products.length -1];
+		const nuevoId = ultimoElementoDeArray +1;
 
-		newProduct.id = products.length + 1;
+		newProduct.id = nuevoId;
 		newProduct.price = Number(newProduct.price);
 		newProduct.image = req.file.filename;
 
@@ -46,8 +48,7 @@ const controller = {
 		}
 		products.push (newProduct)
 
-	 fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
-		console.log(newProduct)
+	  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 
 		res.redirect ('/products')
 
@@ -81,7 +82,7 @@ const controller = {
 		const idToFind = req.body.id;
 		const deleteProduct = products.find ( (p) => p.id == idToFind)
 		return res.send('Ponele que se borró el producto')
-	}
+	},
 };
 
 module.exports = controller;

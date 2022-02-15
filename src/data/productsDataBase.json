@@ -151,5 +151,14 @@
     "description": "La prueba de Multer Definitiva.",
     "id": 17,
     "image": "image-1644938486546"
+  },
+  {
+    "name": "prueba con algunos métodos",
+    "price": 1000,
+    "discount": 10,
+    "category": "visited",
+    "description": "Haciendo prueba poniéndolo en métodos algunas cosas para emprolijar.",
+    "id": "[object Object]1",
+    "image": "image-1644940778467"
   }
 ]
