@@ -33,19 +33,24 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		
-		const newProduct =  (products.push ( { 
-			id: products.length + 1,
-			name : req.body.name,
-			price : req.body.price,
-			discount : req.body.discount,
-			category : req.body.category,
-			description : req.body.description,
-			image: 'meme.jpg'
-		}))
+		const newProduct =  req.body;
+
+		newProduct.id = products.length + 1;
+		newProduct.price = Number(newProduct.price);
+		newProduct.image = req.file.filename;
+
+		if (newProduct.discount == '') {
+			newProduct.discount = 0
+		} else {
+			newProduct.discount = Number(newProduct.discount)
+		}
+		products.push (newProduct)
+
+	 fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 		console.log(newProduct)
-		/*const intoJson = fs.appendFileSync (productsFilePath, newProduct)*/
+
 		res.redirect ('/products')
-		//res.redirect('/products/', {newProduct})
+
 	},
 
 	// Update - Form to edit
