@@ -33,6 +33,7 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		
+		if (req.file && req.file.size < 10000) {
 		const newProduct =  req.body;
 		const ultimoElementoDeArray = products[products.length -1];
 		const nuevoId = ultimoElementoDeArray +1;
@@ -51,7 +52,11 @@ const controller = {
 	  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 
 		res.redirect ('/products')
-
+	} else if (req.file.size > 10000) {
+		res.send('El archivo es demasiado pesado')
+	} else {
+		res.send ('No adjuntaste ninguna imagen')
+	}
 	},
 
 	// Update - Form to edit
