@@ -33,28 +33,29 @@ const controller = {
 	// Create -  Method to store
 	store: (req, res) => {
 		
-		if (req.file && req.file.size < 10000) {
-			console.log(req.file)
-		const newProduct =  req.body;
-		/*const ultimoElementoDeArray = products[products.length -1];
-		const nuevoId = ultimoElementoDeArray +1;*/
-
-		newProduct.id = products.length +1;
-		newProduct.price = Number(newProduct.price);
-		newProduct.image = req.file.filename;
-
-		if (newProduct.discount == '') {
-			newProduct.discount = 0
-		} else {
-			newProduct.discount = Number(newProduct.discount)
-		}
+		if (req.file && req.file.size < 3145728) {
+			
+			const newProduct =  req.body;
+			/*const ultimoElementoDeArray = products[products.length -1];
+			const nuevoId = ultimoElementoDeArray +1;*/
+	
+			newProduct.id = products.length +1;
+			newProduct.price = Number(newProduct.price);
+			newProduct.image = req.file.filename;
+	
+			if (newProduct.discount == '') {
+				newProduct.discount = 0
+			} else {
+				newProduct.discount = Number(newProduct.discount)
+			}
+		
 		products.push (newProduct)
 
-	  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+			controller.dbReWrite()
 
 		res.redirect ('/products')
 
-	} else if (req.file.size > 10000) {
+	} else if (req.file.size > 3145729) {
 		res.send('El archivo es demasiado pesado')
 	} else {
 		res.send ('No adjuntaste ninguna imagen')
@@ -66,21 +67,30 @@ const controller = {
 		const idToFind = req.params.id
 		const product = products.find ( p =>  p.id == idToFind )
 		
-		res.render ('product-edit-form', {product})
+		return res.render ('product-edit-form', {product})
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		const idToFind = req.body.id;
-		const product = products.find ( (p) => p.id == idToFind)
-		const editedProduct = product = {
-			id: req.params.id,
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			category: req.body.category,
-			description: req.body.description
-		}
-		return res.send('Ponele que se editó el producto')
+		
+				const idToFind = req.params.id
+				const productIndex = products.findIndex(product => product.id == idToFind )
+				const editedProduct = req.body;
+		
+				products[productIndex].name = editedProduct.name;
+				products[productIndex].price = Number(editedProduct.price);
+				products[productIndex].discount = Number(editedProduct.discount);
+				if (req.body.category == '') {
+					products[productIndex].category = products[productIndex].category;
+				}else{
+					products[productIndex].category = editedProduct.category
+				}
+				products[productIndex].description = editedProduct.description;
+				if (req.file) {
+				products[productIndex].image = req.file.filename;
+				}
+				controller.dbReWrite()
+		
+		return res.redirect('/products')
 	},
 
 	// Delete - Delete one product from DB
@@ -90,6 +100,9 @@ const controller = {
 		const deleteProduct = products.find ( (p) => p.id == idToFind)
 		return res.send('Ponele que se borró el producto')
 	},
+	dbReWrite: function () { 
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+	}
 };
 
 module.exports = controller;

@@ -5,16 +5,15 @@
     "price": 100,
     "discount": 50,
     "category": "visited",
-    "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
+    "description": "CaASDASDfetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.     ",
     "image": "img-cafetera-moulinex.jpg"
   },
   {
     "id": 2,
-    "name": "Macbook Pro 2022",
+    "name": "ASDASDASDMacbook Pro 2022",
     "price": 500,
     "discount": 3,
-    "category": "in-sale",
-    "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
+    "description": "ASDASDASDMacbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante   ",
     "image": "img-macbook-pro-2019.jpg"
   },
   {
@@ -74,7 +73,7 @@
   {
     "id": 9,
     "name": "Teclado Apple Magic Inalámbrico",
-    "description": "El teclado mágico combina un diseño elegante con una batería recargable incorporada y funciones clave mejoradas. Con un mecanismo de tijera estable debajo de cada tecla, así como un recorrido de teclas optimizado y un perfil bajo, el Teclado Mágico ofrece una experiencia de escritura notablemente cómoda y precisa.",
+    "description": "ASDEl teclado mágico combina un diseño elegante con una batería recargable incorporada y funciones clave mejoradas. Con un mecanismo de tijera estable debajo de cada tecla, así como un recorrido de teclas optimizado y un perfil bajo, el Teclado Mágico ofrece una experiencia de escritura notablemente cómoda y precisa. ",
     "price": 11399,
     "discount": 0,
     "image": "img-apple-magic-keyboard.jpg",
@@ -82,8 +81,8 @@
   },
   {
     "id": 10,
-    "name": "Mouse Inalámbrico Logitech M280",
-    "description": "Uso más cómodo para la mano derecha gracias a la forma contorneada con recubrimiento de goma blanda. Duración de las pilas hasta 18 meses, gracias al diseño para ahorrar energía.El M280 entra automáticamente en estado de suspensión cuando no se está usando.",
+    "name": "MMMMMMMouse Inalámbrico Logitech M280",
+    "description": "UUUUUUUso más cómodo para la mano derecha gracias a la forma contorneada con recubrimiento de goma blanda. Duración de las pilas hasta 18 meses, gracias al diseño para ahorrar energía.El M280 entra automáticamente en estado de suspensión cuando no se está usando. ",
     "price": 1200,
     "discount": 10,
     "image": "img-mouse-logitech.jpg",
@@ -91,12 +90,12 @@
   },
   {
     "id": 11,
-    "name": "Parlante Inalámbrico Bose Soundtouch 10",
-    "description": "Parlante Inalámbrico Bose Soundtouch 10. SoundTouch®.La manera más sencilla de reproducir música en todo su hogar de forma inalámbrica. Características. » Marca: Bose. » Modelo: SoundTouch. » Color: Negro",
+    "name": "ASDASDParlante Inalámbrico Bose Soundtouch 10",
+    "description": "ASDASDASDASDParlante Inalámbrico Bose Soundtouch 10. SoundTouch®.La manera más sencilla de reproducir música en todo su hogar de forma inalámbrica. Características. » Marca: Bose. » Modelo: SoundTouch. » Color: Negro ",
     "price": 29990,
     "discount": 12,
     "image": "img-parlante-bose.jpg",
-    "category": "visited"
+    "category": "asdasd"
   },
   {
     "id": 12,
@@ -144,21 +143,21 @@
     "image": "img-parlante-sony.jpg"
   },
   {
-    "name": "asdasd",
-    "price": 111,
-    "discount": 111,
-    "category": "visited",
-    "description": "asdasdasd",
-    "id": "[object Object]1",
-    "image": "image-1644990998944"
-  },
-  {
-    "name": "adsasdasd",
+    "name": "uuuuuuuuuuuuuuu",
     "price": 123,
     "discount": 1,
-    "category": "in-sale",
-    "description": "sdasdasdasd",
+    "category": "visited",
+    "description": "sdasdasdasd ",
     "id": 18,
     "image": "image-1644991139125"
+  },
+  {
+    "name": "123123123123",
+    "price": 10000,
+    "discount": 10,
+    "category": "in-sale",
+    "description": "123123123123  ",
+    "id": 19,
+    "image": "image-1645162239415"
   }
 ]
