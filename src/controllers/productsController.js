@@ -34,11 +34,12 @@ const controller = {
 	store: (req, res) => {
 		
 		if (req.file && req.file.size < 10000) {
+			console.log(req.file)
 		const newProduct =  req.body;
-		const ultimoElementoDeArray = products[products.length -1];
-		const nuevoId = ultimoElementoDeArray +1;
+		/*const ultimoElementoDeArray = products[products.length -1];
+		const nuevoId = ultimoElementoDeArray +1;*/
 
-		newProduct.id = nuevoId;
+		newProduct.id = products.length +1;
 		newProduct.price = Number(newProduct.price);
 		newProduct.image = req.file.filename;
 
@@ -52,6 +53,7 @@ const controller = {
 	  fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
 
 		res.redirect ('/products')
+
 	} else if (req.file.size > 10000) {
 		res.send('El archivo es demasiado pesado')
 	} else {

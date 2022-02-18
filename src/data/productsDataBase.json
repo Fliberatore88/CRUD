@@ -144,21 +144,21 @@
     "image": "img-parlante-sony.jpg"
   },
   {
-    "name": "La prueba de Multer Difinitiva",
-    "price": 10000,
-    "discount": 15,
+    "name": "asdasd",
+    "price": 111,
+    "discount": 111,
     "category": "visited",
-    "description": "La prueba de Multer Definitiva.",
-    "id": 17,
-    "image": "image-1644938486546"
+    "description": "asdasdasd",
+    "id": "[object Object]1",
+    "image": "image-1644990998944"
   },
   {
-    "name": "prueba con algunos métodos",
-    "price": 1000,
-    "discount": 10,
-    "category": "visited",
-    "description": "Haciendo prueba poniéndolo en métodos algunas cosas para emprolijar.",
-    "id": "[object Object]1",
-    "image": "image-1644940778467"
+    "name": "adsasdasd",
+    "price": 123,
+    "discount": 1,
+    "category": "in-sale",
+    "description": "sdasdasdasd",
+    "id": 18,
+    "image": "image-1644991139125"
   }
 ]
