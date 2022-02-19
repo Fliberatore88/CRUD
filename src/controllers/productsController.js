@@ -32,30 +32,20 @@ const controller = {
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		
-		if (req.file && req.file.size < 3145728) {
+		const newProduct =  req.body;
+		const newProductImage = req.file;
+	
+		if (req.file && newProductImage.size < 3145728) {
 			
-			const newProduct =  req.body;
-			/*const ultimoElementoDeArray = products[products.length -1];
-			const nuevoId = ultimoElementoDeArray +1;*/
-	
-			newProduct.id = products.length +1;
-			newProduct.price = Number(newProduct.price);
-			newProduct.image = req.file.filename;
-	
-			if (newProduct.discount == '') {
-				newProduct.discount = 0
-			} else {
-				newProduct.discount = Number(newProduct.discount)
-			}
+		controller.createNewProduct(newProduct,newProductImage)	
 		
 		products.push (newProduct)
 
-			controller.dbReWrite()
+		controller.dbReWrite()
 
 		res.redirect ('/products')
 
-	} else if (req.file.size > 3145729) {
+	} else if (req.file && newProductImage.size > 3145729) {
 		res.send('El archivo es demasiado pesado')
 	} else {
 		res.send ('No adjuntaste ninguna imagen')
@@ -100,8 +90,23 @@ const controller = {
 		const deleteProduct = products.find ( (p) => p.id == idToFind)
 		return res.send('Ponele que se borró el producto')
 	},
-	dbReWrite: function () { 
+	dbReWrite() { 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
+	},
+	createNewProduct: function (newProduct,newProductImage) {
+
+		newProduct.id = controller.asignIdToProduct();
+		newProduct.price = Number(newProduct.price);
+		newProduct.image = newProductImage.filename;
+		
+		if (newProduct.discount == '') {
+			newProduct.discount = 0
+		} else {
+			newProduct.discount = Number(newProduct.discount)
+		}
+	},
+	asignIdToProduct: function () {
+		return products[products.length -1].id +1;
 	}
 };
 
