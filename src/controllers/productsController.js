@@ -86,9 +86,13 @@ const controller = {
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
 		
-		const idToFind = req.body.id;
-		const deleteProduct = products.find ( (p) => p.id == idToFind)
-		return res.send('Ponele que se borró el producto')
+		const idToFind = req.params.id
+		const deletedProducts = products.filter ( p =>  p.id != idToFind )
+		
+		fs.writeFileSync(productsFilePath, JSON.stringify(deletedProducts, null, 2))
+		return res.redirect('/products')
+	
+		//return res.redirect('/products') 
 	},
 	dbReWrite() { 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, 2))
